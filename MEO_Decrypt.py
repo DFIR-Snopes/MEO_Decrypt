@@ -14,10 +14,6 @@ print("*************************************************")
 
 text_file = open(resource_path ("4_DIGIT_PINS.txt"), "r")
 
-user = os.environ.get("USERNAME")
-
-date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-
 PINS = text_file.read().splitlines()
 
 hash = input('Hash to crack: ')
@@ -37,15 +33,5 @@ if (found == 1):
     print("\n\nPIN found:", correct_PIN)
 else:
     print("An error has occured, check hash is in correct format")
-    
-with open('##CHANGE##ME\Cracked.txt', 'a') as f:
-    f.write(date)
-    f.write(';')
-    f.write(user)
-    f.write(';')
-    f.write(hash)
-    f.write(';')
-    f.write(correct_PIN)
-    f.write('\n')
-    
+   
     input('Press Enter to Exit')
